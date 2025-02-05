@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VerovioExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="94V-Gy-VGc">
+                                <rect key="frame" x="0.0" y="50" width="810" height="1030"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e30-8K-eXg" userLabel="prev page">
+                                <rect key="frame" x="156" y="943" width="101" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="prev page"/>
+                                <connections>
+                                    <action selector="bwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4c-IH-8Qs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uA2-EN-GAW" userLabel="next page">
+                                <rect key="frame" x="529" y="943" width="100" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="next page"/>
+                                <connections>
+                                    <action selector="fwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eRO-Cq-Smg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="94V-Gy-VGc" secondAttribute="trailing" id="12H-A8-zK5"/>
+                            <constraint firstItem="94V-Gy-VGc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U1n-oa-mtu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="94V-Gy-VGc" secondAttribute="bottom" id="c65-xy-uXb"/>
+                            <constraint firstItem="94V-Gy-VGc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fQK-dx-Tv5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Left" destination="XTO-JZ-4VG" id="jFa-o1-MHH"/>
+                        <outlet property="Right" destination="Nfl-Hj-hKv" id="yKR-oA-RHw"/>
+                        <outlet property="nextpage" destination="e30-8K-eXg" id="mf9-AH-plZ"/>
+                        <outlet property="prevpage" destination="uA2-EN-GAW" id="DJo-02-8h7"/>
+                        <outlet property="webView" destination="94V-Gy-VGc" id="rsb-j1-msR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="XTO-JZ-4VG">
+                    <connections>
+                        <action selector="swipeLeft:" destination="BYZ-38-t0r" id="dcV-2y-o3Z"/>
+                        <outlet property="delegate" destination="94V-Gy-VGc" id="n0t-Yw-2UV"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Nfl-Hj-hKv">
+                    <connections>
+                        <action selector="swipeRight:" destination="BYZ-38-t0r" id="7qt-5D-SjL"/>
+                        <outlet property="delegate" destination="94V-Gy-VGc" id="r6T-HC-NKn"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="131.85185185185185" y="137.77777777777777"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
